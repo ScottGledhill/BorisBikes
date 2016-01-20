@@ -44,14 +44,4 @@ describe DockingStation do
       expect(subject.bikes.size).to eq 1
     end
   end
-
-  describe '#bike_broken' do
-    it {is_expected.to respond_to :bike_broken}
-
-    let(:bike) {Bike.new}
-    it "tests if bike can become broken" do
-      subject.bike_broken(bike)
-      expect(bike.working).to be_truthy
-    end
-  end
 end

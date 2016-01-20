@@ -20,9 +20,6 @@ class DockingStation
   	@bikes << bike
   end
 
-  def bike_broken(bike)
-    
-  end
   private
 
   def full?
