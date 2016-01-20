@@ -3,10 +3,14 @@ require "docking_station"
 describe DockingStation do
 
   describe 'initialize' do
+    it 'tests variable capacity' do
+      expect(DockingStation.new(25).capacity).to eq 25
+    end
+
     it 'tests default capacity' do
-    expect(subject.capacity).to eq 20
+      expect(subject.capacity).to eq 20
+    end
   end
-end
 
   describe '#release_bike' do
     it { is_expected.to respond_to :release_bike }
