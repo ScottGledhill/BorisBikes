@@ -10,6 +10,7 @@ attr_reader :bike
 	end
 
 	def dock(bike)
+		fail 'Bike is already docked, no space' if @bike
 		@bike = bike
 		
 	end
