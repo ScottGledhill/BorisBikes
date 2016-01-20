@@ -13,10 +13,16 @@ describe DockingStation do
   end
 
   describe '#release_bike' do
+    let(:bike) {Bike.new}
     it { is_expected.to respond_to :release_bike }
     it 'releases a working bike' do
-      subject.dock(Bike.new)
+      subject.dock(bike)
       expect(subject.release_bike.working).to be_truthy
+    end
+    it 'does not release broken bikes' do
+      bike.broken
+      subject.dock(bike)
+      expect { subject.release_bike }.to raise_error "No working bikes available"
     end
     it 'raises an error if no bikes are available' do
       expect { subject.release_bike }.to raise_error "No available bikes"

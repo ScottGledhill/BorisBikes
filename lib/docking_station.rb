@@ -11,8 +11,13 @@ class DockingStation
   end
 
   def release_bike
-   fail "No available bikes" if empty?
-    @bikes.pop
+    fail "No available bikes" if empty?
+
+    for i in 0...@bikes.size
+      bike = @bikes[i]
+      return @bikes.delete(bike) if bike.working
+    end
+    fail "No working bikes available"
   end
 
   def dock(bike)
