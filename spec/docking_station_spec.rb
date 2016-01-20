@@ -30,8 +30,11 @@ describe DockingStation do
     it 'returns docked bike' do
       test_bike = Bike.new
       subject.dock(test_bike)
-
       expect(subject.bikes.size).to eq 1
     end
   end
+
+  # it 'returns true if dock is full' do
+  #   expect(subject.full?).to eq true
+  # end
 end
