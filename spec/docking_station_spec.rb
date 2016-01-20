@@ -6,7 +6,7 @@ describe DockingStation do
     expect(subject.release_bike).to be_working
   end
   it 'raises error if no bikes are available' do
-    expect { subject.release_bike }.to raise_error("No available bikes")
+    expect { subject.release_bike }.to raise_error "No available bikes"
   end
 
   it {is_expected.to respond_to :dock}
