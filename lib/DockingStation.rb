@@ -17,6 +17,7 @@ end
       bike = @bikes[i]
       return @bikes.delete_at(i) if bike.working
 		end
+		fail "The bike is not working"
 	end
 
 
