@@ -12,9 +12,13 @@ def initialize(capacity=DEFAULT_CAPACITY)
 end
 
 	def release_bike
-		fail "No bikes available" if empty?
-		@bikes.pop
+    fail "No bikes available" if empty?
+  		for i in 0...@bikes.size
+      bike = @bikes[i]
+      return @bikes.delete(bike) if bike.working
+		end
 	end
+
 
 	def dock(bike)
 		fail 'Docking station full' if full?

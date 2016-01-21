@@ -29,13 +29,6 @@ describe '#dock' do
 	end
 end
 
-describe '#release_bike' do
-	it 'releases a bike' do
-		bike = Bike.new
-		subject.dock(bike)
-		expect(subject.release_bike).to eq bike
-	end
-end
 
 	it 'raises an error when there are no bikes available' do
 		expect { subject.release_bike }.to raise_error 'No bikes available'
@@ -45,8 +38,9 @@ end
 		bike = Bike.new
 		bike.broken
 		subject.dock(bike)
-		expect { subject.release_bike }.to raise_error 'The bike is broken'
+		bike2 = Bike.new
+		subject.dock(bike2)
+		expect(subject.release_bike).to eq bike2
 	end
-
 	end
 end
