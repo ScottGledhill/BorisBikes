@@ -21,7 +21,3 @@ describe Van do
     expect(subject.collect_bikes(station)).to eq [bike1, bike2]
   end
 end
-  # it 'collects broken bikes and adds to van' do
-  #   subject.collect_bikes
-  #   expect(bike).to not be_working
-  # end
