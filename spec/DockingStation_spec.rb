@@ -45,12 +45,8 @@ let(:bike2) { double :bike2 }
 			expect(subject.release_bike).to eq bike2
 		end
 
-		it "receives method working and value false" do
-			allow(bike).to receive(:working).and_return(false)
-		end
+
 	end
 
-	it "receives method working and value true" do
-		allow(bike).to receive(:working).and_return(true)
-	end
+	
 end
