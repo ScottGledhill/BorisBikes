@@ -1,8 +1,13 @@
 require 'bike.rb'
 
 describe Bike do
-it {is_expected.to respond_to :working?} 
+  describe 'working' do
+    it {is_expected.to respond_to :working?}
+end
 
-
-end 
-
+  describe 'broken' do
+  it 'check if bike can become broken' do
+      subject.broken
+      expect(subject.working).to eq false
+    end
+end
