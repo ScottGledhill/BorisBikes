@@ -44,9 +44,5 @@ let(:bike2) { double :bike2 }
 			subject.dock(bike2)
 			expect(subject.release_bike).to eq bike2
 		end
-
-
 	end
-
-	
 end
