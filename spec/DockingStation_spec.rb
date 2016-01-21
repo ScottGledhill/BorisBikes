@@ -17,15 +17,15 @@ end
 
 describe '#dock' do
 	it 'docks a bike' do
-		bike = Bike.new
+		bike = double(:bike)
 		bikes = [bike]
 		expect(subject.dock(bike)).to eq bikes
 	end
 
 describe '#dock' do
 	it 'raises an error when full' do
-		subject.capacity.times { subject.dock Bike.new }
-		expect { subject.dock(Bike.new) }.to raise_error 'Docking station full'
+		subject.capacity.times { subject.dock double(:bike) }
+		expect { subject.dock(double(:bike)) }.to raise_error 'Docking station full'
 	end
 end
 
@@ -35,10 +35,10 @@ end
 	end
 
 	it "doesn't release broken bikes" do
-		bike = Bike.new
+		bike = double(:bike)
 		bike.broken
 		subject.dock(bike)
-		bike2 = Bike.new
+		bike2 = double(:bike)
 		subject.dock(bike2)
 		expect(subject.release_bike).to eq bike2
 	end
